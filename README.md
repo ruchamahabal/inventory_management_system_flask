@@ -1,2 +1,2 @@
 # inventory_management_system_flask
-An inventory management system for flask hiring test
+An inventory management web app using flask framework where user can add, delete update products, locations and track product movements 
