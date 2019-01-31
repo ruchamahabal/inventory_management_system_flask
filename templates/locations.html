@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+     <h1>Locations <small>Welcome {{session.username}}</small></h1>
+     <a class="btn btn-success" href="/add_location">Add Location</a>
+     <hr>
+     <table class="table table-striped">
+         <thead>
+             <tr>
+                 <th>Location ID</th>
+                 <th></th>
+                 <th></th>
+             </tr>
+         </thead>
+         <tbody>
+                 {% for location in locations %}
+                <tr>
+                 <td>{{location.location_id}}</td>
+                 <td><a href="edit_location/{{location.location_id}}" class="btn btn-primary pull-right">Edit</a></td>
+                 <td>
+                     <form action="{{url_for('delete_location', id=location.location_id)}}" method="POST">
+                        <input type="hidden" name="method" value="DELETE">
+                        <input type="submit" value="Delete" class="btn btn-danger">
+                     </form>
+                 </td>
+                </tr>
+                {% endfor %}
+         </tbody>
+     </table>
+{% endblock %}

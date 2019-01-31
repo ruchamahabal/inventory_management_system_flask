@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1>Edit Product Movements</h1>
+{% from "includes/_formhelpers.html" import render_field %}
+<form action="" method="POST">
+    <div class="form-group">
+        {{ render_field(form.from_location, class_="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ render_field(form.to_location, class_="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ render_field(form.product_id, class_="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ render_field(form.qty, class_="form-control") }}
+    </div>
+    <p><input type="submit" value="Update" class="btn btn-primary"></p>
+</form>
+{% endblock %}

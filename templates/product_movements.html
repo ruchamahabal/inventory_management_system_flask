@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+     <h1>Product Movements <small>Welcome {{session.username}}</small></h1>
+     <a class="btn btn-success" href="/add_product_movements">Add Product Movements</a>
+     <hr>
+     <table class="table table-striped">
+         <thead>
+             <tr>
+                 <th>Movement ID</th>
+                 <th>Time</th>
+                 <th>From Location</th>
+                 <th>To Location</th>
+                 <th>Product ID</th>
+                 <th>Quantity</th>
+             </tr>
+         </thead>
+         <tbody>
+                 {% for movement in movements %}
+                <tr>
+                 <td>{{movement.movement_id}}</td>
+                 <td>{{movement.time}}</td>
+                 <td>{{movement.from_location}}</td>
+                 <td>{{movement.to_location}}</td>
+                 <td>{{movement.product_id}}</td>
+                 <td>{{movement.qty}}</td>
+                 <td><a href="edit_product_movement/{{movement.movement_id}}" class="btn btn-primary pull-right">Edit</a></td>
+                 <td>
+                     <form action="{{url_for('delete_product_movements', id=movement.movement_id)}}" method="POST">
+                        <input type="hidden" name="method" value="DELETE">
+                        <input type="submit" value="Delete" class="btn btn-danger">
+                     </form>
+                 </td>
+                </tr>
+                {% endfor %}
+         </tbody>
+     </table>
+{% endblock %}

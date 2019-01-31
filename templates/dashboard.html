@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+     <h1>Dashboard <small>Welcome {{session.username}}</small></h1>
+     <hr>
+     <table class="table table-striped">
+         <thead>
+             <tr>
+                 <th>Product</th>
+                 <th>Warehouse</th>
+                 <th>Qty</th>
+             </tr>
+         </thead>
+         <tbody>
+                 {% for product in products %}
+                 {% if product.to_location != NULL %}
+                <tr>
+                 <td>{{product.product_id}}</td>
+                 <td>{{product.to_location}}</td>
+                 <td>{{product.qty}}</td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+         </tbody>
+     </table>
+{% endblock %}
