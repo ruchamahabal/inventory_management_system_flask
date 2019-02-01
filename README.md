@@ -20,12 +20,10 @@ An inventory management web app using flask framework where user can add, delete
 ![edit_product](https://user-images.githubusercontent.com/24353136/52024760-f1ab5300-2527-11e9-9a39-b59639e4ef6d.PNG)
 
 8. Add Product Movements
-![tc](https://user-images.githubusercontent.com/24353136/52024850-4c44af00-2528-11e9-886b-4823a4c9fe0f.PNG)
+![pm-add](https://user-images.githubusercontent.com/24353136/52104617-6b6b3b80-2611-11e9-9844-81b53aabee6e.PNG)
 
-9. Reports
-![capture](https://user-images.githubusercontent.com/24353136/52024812-1a334d00-2528-11e9-8e93-d6f26d9bffb1.PNG)
+9. Reports according to location
+![report-new-1](https://user-images.githubusercontent.com/24353136/52104639-85a51980-2611-11e9-9f52-7ad5a3922c5e.PNG)
 
-Features remaining to be implemented:
-generate reports according to location
-logic: for every product get the product movement with the most recent timestamp. This will give the exact location of every product
-quantity should be validated.
+![report-new-2](https://user-images.githubusercontent.com/24353136/52104660-99508000-2611-11e9-86f9-9114275fbdc3.PNG)
+
