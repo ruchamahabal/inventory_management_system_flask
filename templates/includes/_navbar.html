@@ -9,15 +9,21 @@
         <li class="nav-item active">
           <a class="nav-link" href="/">Home</a>
         </li>
+        {% if session.logged_in %}
         <li class="nav-item">
             <a class="nav-link" href="/products">Products</a>
         </li>
+        {% endif %}
+        {% if session.logged_in %}
         <li class="nav-item">
           <a class="nav-link" href="/locations">Location</a>
         </li>
+        {% endif %}
+        {% if session.logged_in %}
         <li class="nav-item">
           <a class="nav-link" href="/product_movements">Product Movements</a>
         </li>
+        {% endif %}
       </ul>
       <ul class="navbar-nav navbar-right">
         {% if session.logged_in %}

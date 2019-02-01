@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3308
--- Generation Time: Jan 31, 2019 at 01:54 AM
+-- Generation Time: Feb 01, 2019 at 05:29 AM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.2.1
 
@@ -62,11 +62,10 @@ CREATE TABLE `productmovements` (
 --
 
 INSERT INTO `productmovements` (`movement_id`, `time`, `from_location`, `to_location`, `product_id`, `qty`) VALUES
-(2, '2019-01-31 00:12:45', 'Mumbai', 'Pune', 'P1', 200),
-(4, '2019-01-31 00:23:14', 'Pune', 'Nasik', 'P1', 200),
-(7, '2019-01-31 01:11:52', '', 'Mumbai', 'P1', 12),
-(8, '2019-01-31 01:12:31', '', 'Pune', 'P2', 30),
-(9, '2019-01-31 01:13:22', 'Mumbai', 'Nasik', 'P1', 12);
+(40, '2019-02-01 05:09:50', 'Bangalore', '--', 'P1', 100),
+(41, '2019-02-01 05:10:13', 'Bangalore', 'Mumbai', 'P1', 100),
+(42, '2019-02-01 05:10:48', 'Mumbai', 'Pune', 'P1', 50),
+(43, '2019-02-01 05:11:40', 'Bangalore', '--', 'P2', 30);
 
 -- --------------------------------------------------------
 
@@ -87,6 +86,29 @@ INSERT INTO `products` (`product_id`) VALUES
 ('P2'),
 ('P3'),
 ('P4');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_balance`
+--
+
+CREATE TABLE `product_balance` (
+  `id` int(11) NOT NULL,
+  `product_id` varchar(255) DEFAULT NULL,
+  `location_id` varchar(255) DEFAULT NULL,
+  `qty` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `product_balance`
+--
+
+INSERT INTO `product_balance` (`id`, `product_id`, `location_id`, `qty`) VALUES
+(5, 'P1', 'Bangalore', 0),
+(6, 'P1', 'Mumbai', 50),
+(7, 'P1', 'Pune', 50),
+(8, 'P2', 'Bangalore', 30);
 
 -- --------------------------------------------------------
 
@@ -134,6 +156,12 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`);
 
 --
+-- Indexes for table `product_balance`
+--
+ALTER TABLE `product_balance`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -147,7 +175,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `productmovements`
 --
 ALTER TABLE `productmovements`
-  MODIFY `movement_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `movement_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+--
+-- AUTO_INCREMENT for table `product_balance`
+--
+ALTER TABLE `product_balance`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `users`
 --
