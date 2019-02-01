@@ -14,7 +14,7 @@ An inventory management web app using flask framework where user can add, delete
 ![locations](https://user-images.githubusercontent.com/24353136/52024648-91b4ac80-2527-11e9-9444-2a6a0889d25f.PNG)
 
 5. Product Movements
-![tc](https://user-images.githubusercontent.com/24353136/52024701-ca548600-2527-11e9-9d66-61198136146b.PNG)
+![pm_new](https://user-images.githubusercontent.com/24353136/52104694-c8ff8800-2611-11e9-802d-f45b93389e22.PNG)
 
 6. Edit Products
 ![edit_product](https://user-images.githubusercontent.com/24353136/52024760-f1ab5300-2527-11e9-9a39-b59639e4ef6d.PNG)
